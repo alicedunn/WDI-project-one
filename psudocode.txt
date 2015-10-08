@@ -1,0 +1,22 @@
+BATTLESHIPS
+
+Make 2 grids. 10*10 (one large at front of screen, one smaller in the side)
+Place 5 ships on the grid:
+  5 squares
+  4 squares
+  2*3 squares
+  1*3 squares
+    drag and drop images of ships?
+computer places same ships on grid - hidden from player
+user guesses squares on click 
+  appears on the smaller grid as black if miss and red if hit
+computer returns hit or miss
+if hit player makes another guess
+if miss computer turn
+computer make random guess unless hit
+if hit computer try adjacent squares
+  if two hits, continue on horizontal or vertical
+  if there are spaces nearby - can computer take information in
+when ship is completely hit display sink.
+make ship greyed out on player board
+when either computer or player has sunk all ships display winner.
