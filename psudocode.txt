@@ -28,3 +28,5 @@ when ship is completely hit display sink.
 make ship greyed out on player board
 when either computer or player has sunk all ships display winner.
 keep tally of winners?
+
+2*2 and build up from there. 
