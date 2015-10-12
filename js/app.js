@@ -1,3 +1,7 @@
+var count=0;
+var compShipsRemaining = 5;
+var playShipsRemaining = 5;
+
 $(function(){
   setup();
   addResetListener();
@@ -6,62 +10,99 @@ $(function(){
 function setup(){
   $("td.box").on("click", function(){
     $(this).toggleClass("placedShip");
-    $(this).css("background-image", "./battleship.jpg" )
-    var select = Math.ceil(Math.random()*9);
+    $(this).css("background-image", "./battleship.jpg" );
+
+    var select = Math.ceil(Math.random()*25);
     $("td#c"+select+".comp").toggleClass("computerShip");
-    $("td").off("click");  
-    playerMove()
-  })
-}
+    count++;
+
+    if(count === 5) {
+      playerMove();
+      $("td.box").off('click');
+    }
+  });
+  // else {
+  //   $("td").off("click"); 
+  //   playerMove();
+  //   }
+};
 
 function playerMove(){
   $("h2").text("guess where the computer's ship is on the computer board!");
   $("td.comp").on("click", function(){
     playerGo= $(event.target);
     if (playerGo.hasClass("computerShip")){
-      $("h2").text("Player hit, you Win!");
-      playerGo.css("background-image", "url(./boom.png)");
-      playerGo.css("background-size", "cover")
-      $("td").off("click");
+      $(this).off("click");
+      $("h2").text("Player hit, have another go!");
+      playerGo.toggleClass('hit')
+      compShipsRemaining --;
+      checkForWin();
       }
+     } 
     else {
-    playerGo.text("miss")
+    $(this).off("click");
+    playerGo.text("miss");
     computerMove();
     }
   })
 }
 
 function computerMove(){
-  var computerChoose = Math.ceil(Math.random()*9);
+  var computerChoose = Math.ceil(Math.random()*25);
   console.log(computerChoose)
   if ($("td#p"+computerChoose+".box").text().length === 0){
     compSelect = $("td#p"+computerChoose+".box");
     if (compSelect.hasClass("placedShip")){
-      $("h2").text("Computer hit you! Computer Wins!");
-      compSelect.css("background-color", "transparent")
-      compSelect.css("background-image", "url(./boom.png)");
-      compSelect.css("background-size", "cover");
-      $("td").off("click");
+      $("h2").text("Computer hit you!");
+      compSelect.toggleClass("hit");
+      compSelect.text("hit")
+      playShipsRemaining --;
+      checkForWin();
     }
     else {
-      $("h2").text("You Missed! Computer chose and missed. Try again")
       compSelect.text("miss");
+      $("h2").text("player go")
     }
   }else
   computerMove();
+}
+
+function checkForWin(){
+  if(playShipsRemaining == 0){
+    $("td").off("click")
+    displayWinner();
+  }
+  else if(compShipsRemaining == 0){
+    $("td").off("click");
+    displayWinner();
+  }
+  else {
+
+  }
 }
 
 function addResetListener (){
   $("#reset").on("click", function(){
   $("h2").text("Place your ship on player board");
   for (var i=0; i<$(".box").length+1; i++){
-    $("td#p"+i+".box").removeClass("placedShip computerShip");
-    $("td#p"+i+".box").css("background-image", "")
+    $("td#p"+i+".box").removeClass("placedShip computerShip hit");
     $("td#p"+i+".box").text("");
-    $("td#c"+i+".comp").removeClass("placedShip computerShip");
-    $("td#c"+i+".comp").css("background-image", "")
+    $("td#c"+i+".comp").removeClass("placedShip computerShip hit");
     $("td#c"+i+".comp").text("");
+    count = 0
+    playShipsRemaining = 5;
+    compShipsRemaining = 5;
     }
     setup();
   })
+}
+
+function displayWinner(){
+  console.log("winner")
+  if (compShipsRemaining == 0){
+    $("h2").text("Congrats, you have won the game!")
+  }
+  else {
+    $("h2").text("Sorry, computer won this time")
+  }
 }
