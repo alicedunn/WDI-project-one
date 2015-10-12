@@ -4,7 +4,6 @@ $(function(){
 })
 
 function setup(){
-  console.log("im in")
   $("td.box").on("click", function(){
     $(this).toggleClass("placedShip");
     $(this).css("background-image", "./battleship.jpg" )
@@ -36,8 +35,8 @@ function playerMove(){
 }
 
 function computerMove(){
-  
   var computerChoose = Math.ceil(Math.random()*9);
+  console.log(computerChoose)
   if ($("td#p"+computerChoose+".box").text().length === 0){
     compSelect = $("td#p"+computerChoose+".box");
     if (compSelect.hasClass("placedShip")){
@@ -51,8 +50,10 @@ function computerMove(){
       $("h2").text("You Missed! Computer chose and missed. Try again")
       compSelect.text("miss");
     }
-  }
+  }else
+  computerMove();
 }
+
 function addResetListener (){
   $("#reset").on("click", function(){
   $("h2").text("Place your ship on player board");
