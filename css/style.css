@@ -14,7 +14,8 @@ h1 {
   text-align: center;
 }
 .placedShip {
-  background-color: red;
+  background-image: url("../battleship.jpg");
+  background-size: cover;
 }
 
 .playerBoard {
@@ -23,11 +24,21 @@ h1 {
 }
 
 .computerShip{
-  background-color: blue;
+  
 }
 thead {
   width: 300px;
 }
 h2 {
+  text-align: center;
+}
+#reset {
+  padding: 5px;
+  width: 400px;
+  font-size: 1.5em;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.container {
   text-align: center;
 }
