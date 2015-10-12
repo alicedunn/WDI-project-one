@@ -18,16 +18,13 @@ function playerMove(){
   $("h2").text("guess where the computer's ship is on the computer board!");
   $("td.comp").on("click", function(){
     playerGo= $(event.target);
-    console.log(playerGo.attr("id"))
     if (playerGo.hasClass("computerShip")){
       $("h2").text("Player hit, you Win!");
-      playerGo.text("hit")
       playerGo.css("background-image", "url(./boom.png)");
       playerGo.css("background-size", "cover")
       $("td").off("click");
       }
     else {
-    console.log("miss");
     playerGo.text("miss")
     computerMove();
     }

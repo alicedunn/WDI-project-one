@@ -42,3 +42,8 @@ h2 {
 .container {
   text-align: center;
 }
+
+#ship{
+  border: 2px solid black;
+  width: 100px;
+}
