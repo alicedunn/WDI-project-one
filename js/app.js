@@ -37,8 +37,7 @@ function playerMove(){
       playerGo.toggleClass('hit')
       compShipsRemaining --;
       checkForWin();
-      }
-     } 
+      } 
     else {
     $(this).off("click");
     playerGo.text("miss");
