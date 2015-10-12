@@ -4,6 +4,7 @@
   <title>Battleships</title>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
   <script type="text/javascript" src="js/app.js"></script>
 
 </head>
@@ -18,47 +19,47 @@
 <caption>Player Board</caption>
 <thead>
   <tr>
-    <td id="p1" class="box"></td>
-    <td id="p2" class="box"></td>
-    <td id="p3" class="box"></td>
-    <td id="p4" class="box"></td>
-    <td id="p5" class="box"></td>
+    <td data-num="1" id="p1" class="box"></td>
+    <td data-num="2" id="p2" class="box"></td>
+    <td data-num="3" id="p3" class="box"></td>
+    <td data-num="4" id="p4" class="box"></td>
+    <td data-num="5" id="p5" class="box"></td>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td id="p6" class="box"></td>
-    <td id="p7" class="box"></td>
-    <td id="p8" class="box"></td>
-    <td id="p9" class="box"></td>
-    <td id="p10" class="box"></td>
+    <td data-num="6" id="p6" class="box"></td>
+    <td data-num="7" id="p7" class="box"></td>
+    <td data-num="8" id="p8" class="box"></td>
+    <td data-num="9" id="p9" class="box"></td>
+    <td data-num="10" id="p10" class="box"></td>
   </tr>
 </tbody>
 <tbody>
   <tr>
-    <td id="p11" class="box"></td>
-    <td id="p12" class="box"></td>
-    <td id="p13" class="box"></td>
-    <td id="p14" class="box"></td>
-    <td id="p15" class="box"></td>
+    <td data-num="11" id="p11" class="box"></td>
+    <td data-num="12" id="p12" class="box"></td>
+    <td data-num="13" id="p13" class="box"></td>
+    <td data-num="14" id="p14" class="box"></td>
+    <td data-num="15" id="p15" class="box"></td>
   </tr>
 </tbody>
 <tbody>
   <tr>
-    <td id="p16" class="box"></td>
-    <td id="p17" class="box"></td>
-    <td id="p18" class="box"></td>
-    <td id="p19" class="box"></td>
-    <td id="p20" class="box"></td>
+    <td data-num="16" id="p16" class="box"></td>
+    <td data-num="17" id="p17" class="box"></td>
+    <td data-num="18" id="p18" class="box"></td>
+    <td data-num="19" id="p19" class="box"></td>
+    <td data-num="20" id="p20" class="box"></td>
   </tr>
 </tbody>
 <tfoot>
   <tr>
-    <td id="p21" class="box"></td>
-    <td id="p22" class="box"></td>
-    <td id="p23" class="box"></td>
-    <td id="p24" class="box"></td>
-    <td id="p25" class="box"></td>
+    <td data-num="21" id="p21" class="box"></td>
+    <td data-num="22" id="p22" class="box"></td>
+    <td data-num="23" id="p23" class="box"></td>
+    <td data-num="24" id="p24" class="box"></td>
+    <td data-num="25" id="p25" class="box"></td>
   </tr>
 </tfoot>
 </table>
@@ -68,47 +69,47 @@
 <caption>Computer Board</caption>
 <thead>
   <tr>
-    <td id="c1" class="comp"></td>
-    <td id="c2" class="comp"></td>
-    <td id="c3" class="comp"></td>
-    <td id="c4" class="comp"></td>
-    <td id="c5" class="comp"></td>
+    <td data-num="1" id="c1" class="comp"></td>
+    <td data-num="2" id="c2" class="comp"></td>
+    <td data-num="3" id="c3" class="comp"></td>
+    <td data-num="4" id="c4" class="comp"></td>
+    <td data-num="5" id="c5" class="comp"></td>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td id="c6" class="comp"></td>
-    <td id="c7" class="comp"></td>
-    <td id="c8" class="comp"></td>
-    <td id="c9" class="comp"></td>
-    <td id="c10" class="comp"></td>
+    <td data-num="6" id="c6" class="comp"></td>
+    <td data-num="7" id="c7" class="comp"></td>
+    <td data-num="8" id="c8" class="comp"></td>
+    <td data-num="9" id="c9" class="comp"></td>
+    <td data-num="10" id="c10" class="comp"></td>
   </tr>
 </tbody>
 <tbody>
   <tr>
-    <td id="c11" class="comp"></td>
-    <td id="c12" class="comp"></td>
-    <td id="c13" class="comp"></td>
-    <td id="c14" class="comp"></td>
-    <td id="c15" class="comp"></td>
+    <td data-num="11" id="c11" class="comp"></td>
+    <td data-num="12" id="c12" class="comp"></td>
+    <td data-num="13" id="c13" class="comp"></td>
+    <td data-num="14" id="c14" class="comp"></td>
+    <td data-num="15" id="c15" class="comp"></td>
   </tr>
 </tbody>
 <tbody>
   <tr>
-    <td id="c16" class="comp"></td>
-    <td id="c17" class="comp"></td>
-    <td id="c18" class="comp"></td>
-    <td id="c19" class="comp"></td>
-    <td id="c20" class="comp"></td>
+    <td data-num="16" id="c16" class="comp"></td>
+    <td data-num="17" id="c17" class="comp"></td>
+    <td data-num="18" id="c18" class="comp"></td>
+    <td data-num="19" id="c19" class="comp"></td>
+    <td data-num="20" id="c20" class="comp"></td>
   </tr>
 </tbody>
 <tfoot>
   <tr>
-    <td id="c21" class="comp"></td>
-    <td id="c22" class="comp"></td>
-    <td id="c23" class="comp"></td>
-    <td id="c24" class="comp"></td>
-    <td id="c25" class="comp"></td>
+    <td data-num="21" id="c21" class="comp"></td>
+    <td data-num="22" id="c22" class="comp"></td>
+    <td data-num="23" id="c23" class="comp"></td>
+    <td data-num="24" id="c24" class="comp"></td>
+    <td data-num="25" id="c25" class="comp"></td>
   </tr>
 </tfoot>
 </table>

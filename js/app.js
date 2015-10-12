@@ -9,14 +9,35 @@ $(function(){
 
 function setup(){
   $("td.box").on("click", function(){
+    var clicked = $(this).data("num")/6;
+    console.log(clicked)
+    var nextTo =  ($(this).next()).data("num")/6;
+    console.log(nextTo);
+    if ((Math.floor(clicked)) == (Math.floor(nextTo))){ 
+    $(this).next().toggleClass("placedShip")
     $(this).toggleClass("placedShip");
-    $(this).css("background-image", "./battleship.jpg" );
-
+  }
+  else {
+    return console.log("invalid choice")
+  }
     var select = Math.ceil(Math.random()*25);
-    $("td#c"+select+".comp").toggleClass("computerShip");
-    count++;
+    console.log(select)
+    var $compCheck = $("td#c"+select+".comp");
+    console.log($compCheck);
+    var $nextCompCheck = $("td#c"+(select+1)+".comp");
+    console.log($nextCompCheck);
+    if (Math.floor($compCheck.data("num")/6) == Math.floor(($nextCompCheck).data("num")/6)){
+      console.log(Math.floor($compCheck.data("num")/6));
+      console.log(Math.floor(($nextCompCheck).data("num")/6));
 
-    if(count === 5) {
+    $compCheck.toggleClass("computerShip");
+    $compCheck.next().toggleClass("computerShip");
+    count++;
+  }
+  else{
+    console.log("invalid comp")
+  }
+    if(count === 4) {
       playerMove();
       $("td.box").off('click');
     }
@@ -57,6 +78,7 @@ function computerMove(){
       compSelect.text("hit")
       playShipsRemaining --;
       checkForWin();
+
     }
     else {
       compSelect.text("miss");
@@ -74,9 +96,6 @@ function checkForWin(){
   else if(compShipsRemaining == 0){
     $("td").off("click");
     displayWinner();
-  }
-  else {
-
   }
 }
 

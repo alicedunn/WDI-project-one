@@ -30,3 +30,10 @@ when either computer or player has sunk all ships display winner.
 keep tally of winners?
 
 2*2 and build up from there. 
+
+
+
+if 2 sqares are next to each other. New image. big ship. big ship gives different response. so comp or player can try nearby. different class of hit??
+
+choose ids on where to place it. only select ids that have the same result / 6.
+string into number. access number. use math.floor.

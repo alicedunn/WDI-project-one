@@ -1,17 +1,32 @@
+*{
+  font-family: 'Inconsolata';
+}
+
+body {
+  background-image: url("../radar.jpg");
+  background-size: cover;
+}
+
+
 table {
   margin: 0 auto;
-  border-radius:10px;
+  border-radius:20px;
 }
 td {
-  border: 1px solid grey;
+  border: 1px solid rgba(55,255,33,1);
   width: 50px;
   height: 50px;
   text-align: center;
   font-size: 20px;
   box-sizing:border-box;
+  background-color: rgba(0,255,255,0.4);
+}
+td.hover {
+  border: 1px solid red;
 }
 h1 {
   text-align: center;
+  color: white;
 }
 .placedShip {
   background-image: url("../Ship.jpg");
@@ -25,10 +40,11 @@ h1 {
 
 .playerBoard {
   float: right;
-  margin: 0 auto;
+  margin: 0 150px;
 }
 
 .computerShip{
+  background-color: red;
   
 }
 thead {
@@ -36,6 +52,7 @@ thead {
 }
 h2 {
   text-align: center;
+  color: white;
 }
 #reset {
   padding: 5px;
