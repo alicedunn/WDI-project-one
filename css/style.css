@@ -31,8 +31,12 @@ h1 {
 }
 .placedShip {
   background-image: url("../Images/battle.png");
-  background-size: 200% 100%;
+  background-size: cover;
   overflow: visible;
+}
+.placedShipB {
+  background-image: url("../Images/battleB.png");
+  background-size: cover;
 }
 .hit {
   background-image: url("../Images/boom.png");
@@ -61,6 +65,7 @@ h2 {
   font-size: 20px;
   border-radius: 10px;
   cursor: pointer;
+  margin: 50px;
 }
 .container {
   text-align: center;
@@ -93,11 +98,16 @@ border-color: blue;
 }
 
 #playGame {
+  margin: 70px;
   padding: 5px;
   width: 300px;
   font-size: 20px;
   border-radius: 10px;
   cursor: pointer;
+}
+p{
+  width: 600px;
+  margin: 0 auto;
 }
 /*.custom {
    cursor: url('../Images/Radar.ani'), auto;

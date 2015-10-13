@@ -14,8 +14,8 @@ function setup(){
 
     // console.log("INDEX", $(this).index());
 
-    if ($(this).index() < 4 && (!$(this).hasClass("placedShip")) && (!$(this).next().hasClass("placedShip"))){ 
-      $(this).next().addClass("placedShip");
+    if ($(this).index() < 4 && (!$(this).hasClass("placedShip")) && (!$(this).next().hasClass("placedShip")) && (!$(this).next().hasClass("placedShipB")) && (!$(this).next().hasClass("placedShipB"))){ 
+      $(this).next().addClass("placedShipB");
       $(this).addClass("placedShip");
       var select = Math.ceil(Math.random()*25);
       var $compCheck = $("td#c"+select+".comp");
@@ -73,7 +73,7 @@ function computerMove(){
     if ($("td#p"+computerChoose+".box").text().length === 0){
       compSelect = $("td#p"+computerChoose+".box");
       setTimeout(function(){
-      if (compSelect.hasClass("placedShip")){
+      if (compSelect.hasClass("placedShip")||(compSelect.hasClass("placedShipB"))){
         var audioBoom = new Audio('./Sounds/explosion.wav');
         audioBoom.play()
         $("h2").text("Computer hit you!");
@@ -82,7 +82,7 @@ function computerMove(){
         playShipsRemaining --;
         console.log("player ships 1"+playShipsRemaining)
         checkForWin();
-        if ((compSelect.next().hasClass("placedShip"))&& (!compSelect.next().hasClass("hit"))){
+        if (((compSelect.next().hasClass("placedShip"))|| (compSelect.next().hasClass("placedShipB") ))&& (!compSelect.next().hasClass("hit"))){
           var audioBoom = new Audio('./Sounds/explosion.wav');
           audioBoom.play()
           compSelect.next().addClass("hit");
@@ -128,9 +128,9 @@ function addResetListener (){
   $("#reset").on("click", function(){
     $("h2").text("Place your ship on player board");
     for (var i=0; i<$(".box").length+1; i++){
-      $("td#p"+i+".box").removeClass("placedShip computerShip hit");
+      $("td#p"+i+".box").removeClass("placedShip computerShip placedShipB hit");
       $("td#p"+i+".box").text("");
-      $("td#c"+i+".comp").removeClass("placedShip computerShip hit");
+      $("td#c"+i+".comp").removeClass("placedShip placedShipB computerShip hit");
       $("td#c"+i+".comp").text("");
       count = 0
       playShipsRemaining = 8;
