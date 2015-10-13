@@ -1,9 +1,10 @@
 *{
   font-family: 'Inconsolata';
+  color: white;
 }
 
 body {
-  background-image: url("../radar.jpg");
+  background-image: url("../Images/radar.jpg");
   background-size: cover;
 }
 
@@ -29,11 +30,11 @@ h1 {
   color: white;
 }
 .placedShip {
-  background-image: url("../Ship.jpg");
+  background-image: url("../Images/sub.gif");
   background-size: cover;
 }
 .hit {
-  background-image: url("../boom.png");
+  background-image: url("../Images/boom.png");
   background-size: cover;
   color: transparent;
 }
@@ -44,7 +45,6 @@ h1 {
 }
 
 .computerShip{
-  background-color: red;
   
 }
 thead {
@@ -69,3 +69,17 @@ h2 {
   border: 2px solid black;
   width: 100px;
 }
+table:hover {
+    -webkit-transform: scale(1.5, 1.5);
+    -moz-transform: scale(1.5, 1.5);
+    -o-transform: scale(1.5, 1.5);
+    -ms-transform: scale(1.5, 1.5);
+    transform: scale(1.5, 1.5);
+  vertical-align: middle;
+}
+td:hover{
+border-color: blue;
+}
+/*.custom {
+   cursor: url('../Images/Radar.ani'), auto;
+}*/
