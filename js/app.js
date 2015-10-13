@@ -14,7 +14,7 @@ function setup(){
 
     // console.log("INDEX", $(this).index());
 
-    if ($(this).index() < 4 && (!$(this).hasClass("placedShip")) && (!$(this).next().hasClass("placedShip")) && (!$(this).next().hasClass("placedShipB")) && (!$(this).next().hasClass("placedShipB"))){ 
+    if ($(this).index() < 4 && (!$(this).hasClass("placedShip")) && (!$(this).next().hasClass("placedShip")) && (!$(this).hasClass("placedShipB")) && (!$(this).next().hasClass("placedShipB"))){ 
       $(this).next().addClass("placedShipB");
       $(this).addClass("placedShip");
       var select = Math.ceil(Math.random()*25);
