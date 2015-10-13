@@ -6,6 +6,7 @@ var lastCompChoice = 0;
 $(function(){
   setup();
   addResetListener();
+  playGame()
 })
 
 function setup(){
@@ -67,11 +68,11 @@ function playerMove(){
 
 function computerMove(){
   $("h2").text("Computer's Move")
-  setTimeout(function(){
     var computerChoose = Math.ceil(Math.random()*25);
     console.log(computerChoose)
     if ($("td#p"+computerChoose+".box").text().length === 0){
       compSelect = $("td#p"+computerChoose+".box");
+      setTimeout(function(){
       if (compSelect.hasClass("placedShip")){
         var audioBoom = new Audio('./Sounds/explosion.wav');
         audioBoom.play()
@@ -90,12 +91,14 @@ function computerMove(){
           console.log("player ships 2"+playShipsRemaining)
           checkForWin();
         }
+
         else{
           compSelect.next().text("miss");
           $("h2").text("Computer hit you! Now your go!")
         }
 
-      }
+      } 
+
       else {
         var 
         audioSplash = new Audio('./Sounds/splash2.mp3');
@@ -103,11 +106,11 @@ function computerMove(){
         compSelect.text("miss");
         $("h2").text("player go")
       }
+    }, 1000)
     }else {
       computerMove();
       checkForWin();
     }
-  }, 1500)
 }
 
 function checkForWin(){
@@ -148,4 +151,9 @@ function displayWinner(){
     audioLose.play();
     $("h2").text("Sorry, computer won this time")
   }
+}
+function playGame (){
+  $("#playGame").on("click", function(){
+    $("html,body").animate({scrollTop : $(".second").offset().top}, 1000);
+  })
 }

@@ -30,8 +30,9 @@ h1 {
   color: white;
 }
 .placedShip {
-  background-image: url("../Images/sub.gif");
-  background-size: cover;
+  background-image: url("../Images/battle.png");
+  background-size: 200% 100%;
+  overflow: visible;
 }
 .hit {
   background-image: url("../Images/boom.png");
@@ -56,18 +57,13 @@ h2 {
 }
 #reset {
   padding: 5px;
-  width: 400px;
-  font-size: 1.5em;
+  width: 300px;
+  font-size: 20px;
   border-radius: 10px;
   cursor: pointer;
 }
 .container {
   text-align: center;
-}
-
-#ship{
-  border: 2px solid black;
-  width: 100px;
 }
 table:hover {
     -webkit-transform: scale(1.5, 1.5);
@@ -79,6 +75,29 @@ table:hover {
 }
 td:hover{
 border-color: blue;
+}
+
+.first {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+}
+
+.first h1 {
+  font-size: 80px;
+}
+
+.second {
+  width: 100%;
+  height: 100vh;
+}
+
+#playGame {
+  padding: 5px;
+  width: 300px;
+  font-size: 20px;
+  border-radius: 10px;
+  cursor: pointer;
 }
 /*.custom {
    cursor: url('../Images/Radar.ani'), auto;
