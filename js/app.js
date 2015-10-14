@@ -11,9 +11,6 @@ $(function(){
 
 function setup(){
   $("td.box").on("click", function(){
-
-    // console.log("INDEX", $(this).index());
-
     if ($(this).index() < 4 && (!$(this).hasClass("placedShip")) && (!$(this).next().hasClass("placedShip")) && (!$(this).hasClass("placedShipB")) && (!$(this).next().hasClass("placedShipB"))){ 
       $(this).next().addClass("placedShipB");
       $(this).addClass("placedShip");
@@ -32,7 +29,6 @@ function setup(){
     else {
       return $("h2").text("invalid choice, choose another position")
     }
-    
     if(count === 4) {
       playerMove();
       $("td.box").off('click');
@@ -68,11 +64,10 @@ function playerMove(){
 
 function computerMove(){
   $("h2").text("Computer's Move")
-    var computerChoose = Math.ceil(Math.random()*25);
-    console.log(computerChoose)
-    if ($("td#p"+computerChoose+".box").text().length === 0){
-      compSelect = $("td#p"+computerChoose+".box");
-      setTimeout(function(){
+  var computerChoose = Math.ceil(Math.random()*25);
+  if ($("td#p"+computerChoose+".box").text().length === 0){
+    compSelect = $("td#p"+computerChoose+".box");
+    setTimeout(function(){
       if (compSelect.hasClass("placedShip")||(compSelect.hasClass("placedShipB"))){
         var audioBoom = new Audio('./Sounds/explosion.wav');
         audioBoom.play()
@@ -80,7 +75,6 @@ function computerMove(){
         compSelect.addClass("hit");
         compSelect.text("hit")
         playShipsRemaining --;
-        console.log("player ships 1"+playShipsRemaining)
         checkForWin();
         if (((compSelect.next().hasClass("placedShip"))|| (compSelect.next().hasClass("placedShipB") ))&& (!compSelect.next().hasClass("hit"))){
           var audioBoom = new Audio('./Sounds/explosion.wav');
@@ -88,7 +82,6 @@ function computerMove(){
           compSelect.next().addClass("hit");
           compSelect.next().text("hit");
           playShipsRemaining --;
-          console.log("player ships 2"+playShipsRemaining)
           checkForWin();
         }
 
@@ -107,10 +100,10 @@ function computerMove(){
         $("h2").text("player go")
       }
     }, 1000)
-    }else {
-      computerMove();
-      checkForWin();
-    }
+}else {
+  computerMove();
+  checkForWin();
+}
 }
 
 function checkForWin(){
