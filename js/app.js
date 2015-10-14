@@ -84,23 +84,23 @@ function computerMove(){
           playShipsRemaining --;
           checkForWin();
         }
-
         else{
           compSelect.next().text("miss");
           $("h2").text("Computer hit you! Now your go!")
+          checkForWin();
         }
-
       } 
-
       else {
         var 
         audioSplash = new Audio('./Sounds/splash2.mp3');
         audioSplash.play();
         compSelect.text("miss");
         $("h2").text("player go")
+        checkForWin();
       }
     }, 1000)
-}else {
+}
+else {
   computerMove();
   checkForWin();
 }
