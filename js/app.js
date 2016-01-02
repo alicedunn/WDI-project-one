@@ -98,7 +98,7 @@ function computerMove(){
         $("h2").text("player go")
         checkForWin();
       }
-    }, 1000)
+    }, 1000)7
 }
 else {
   computerMove();
